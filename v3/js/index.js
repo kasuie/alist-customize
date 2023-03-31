@@ -7,7 +7,6 @@
  */
 const setFooter = () => {
     const target = document.querySelector(".footer > div");
-    console.log(target);
     if (target) {
         target.innerHTML = "<a class='hope-anchor hope-c-iHuheP hope-c-PJLV hope-c-PJLV-idrWMwW-css' target='_blank' rel='noopener noreferrer' href='https://kasuie.cc'>© 2020 - 2023 By KASUIE</a>";
         clearInterval(interval);
