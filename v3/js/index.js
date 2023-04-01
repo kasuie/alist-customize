@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2023-03-31 17:00:13
  * @LastEditors: kasuie
- * @LastEditTime: 2023-04-01 23:04:33
+ * @LastEditTime: 2023-04-01 23:09:07
  * @Description: 
  */
 let footer = false, desc = false;
@@ -16,7 +16,7 @@ const setFooter = () => {
 }
 const setDesc = () => {
     const self = document.querySelector(".d-kasuie");
-    const target = document.querySelector(".markdown-body > p");
+    let target = document.querySelector(".markdown-body > p");
     if (target && target.innerText === "${placeholder}") {
         target = self;
         self.style.display = "unset";
