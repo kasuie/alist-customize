@@ -25,7 +25,7 @@ ul.d-kasuie-tabs li svg {
 li.d-kasuie-tab-is-active {
   color: white;
 }
-li.d-kasuie-tab-is-active svg {
+ul.d-kasuie-tabs li.d-kasuie-tab-is-active svg {
   stroke: white;
   transform: translateX(0px);
 }
