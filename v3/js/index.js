@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2023-03-31 17:00:13
  * @LastEditors: kasuie
- * @LastEditTime: 2023-04-02 00:23:58
+ * @LastEditTime: 2023-04-02 00:52:53
  * @Description: 
  */
 let footer = false, desc = false;
@@ -16,11 +16,10 @@ const setFooter = () => {
 }
 const setDesc = () => {
     const self = document.querySelector(".d-kasuie");
-    let target = document.querySelector(".markdown-body > p");
-    if (target && target.innerText === "${placeholder}") {
+    const target = document.querySelector(".body.hope-c-PJLV-iiHckfM-css");
+    if (target) {
         self.style.display = "unset";
-        target.parentNode.innerHTML = self;
-        console.log(target.parentElement);
+        target.appendChild(self);
         desc = true;
     }
 }
