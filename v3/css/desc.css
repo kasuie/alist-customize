@@ -15,7 +15,7 @@ ul.d-kasuie-tabs li{
     justify-content: center;
     flex-direction: row;
 }
-svg {
+ul.d-kasuie-tabs li svg {
   stroke: rgb(24, 144, 255);
   width: 24px;
   height: 24px;
