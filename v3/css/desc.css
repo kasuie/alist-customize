@@ -1,0 +1,63 @@
+.d-kasuie-nav {
+    position: relative;
+    height: 42px;
+}
+ul.d-kasuie-tabs {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+ul.d-kasuie-tabs li{
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+svg {
+  stroke: rgb(24, 144, 255);
+  width: 24px;
+  height: 24px;
+  transform: translateX(100%);
+  transition: 0.4s ease all;
+}
+li.d-kasuie-tab-is-active {
+  color: white;
+}
+li.d-kasuie-tab-is-active svg {
+  stroke: white;
+  transform: translateX(0px);
+}
+.link-text {
+  color: white;
+  margin-left: 7px;
+  opacity: 0;
+  transform: translateX(calc( 100% - 60px ));
+  transition: 0.3s ease all;
+  user-select: none;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+li.d-kasuie-tab-is-active .link-text {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+.link-background {
+  position: absolute;
+  background: rgb(24, 144, 255);
+  border-radius: 18px;
+  width: 110px;
+  height: 100%;
+  z-index: 0;
+  transition: 0.4s cubic-bezier(0.7, 0, 0.38, 0.86) all;
+}
+.d-kasuie-main > li {
+    display: none;
+}
+.d-kasuie-main > li.d-kasuie-main-is-active {
+    display: unset;
+}
