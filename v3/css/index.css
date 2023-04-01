@@ -6,71 +6,64 @@
 /** 鼠标样式 */
 
 /** 背景 */
-
-/*白天背景图*/
+body.hope-ui-light::before, body.hope-ui-dark::before {
+    content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	background-attachment: fixed;
+	background: transparent url(../img/bg_main.webp) center center no-repeat;
+	background-size: cover;
+	transform: scale(1);
+}
+/*白天背景稍亮*/
 body.hope-ui-light::before {
-    content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	background-attachment: fixed;
-	background: transparent url(../img/bg_main.webp) center center no-repeat;
 	filter: blur(5px) brightness(0.7);
-	background-size: cover;
-	transform: scale(1);
 }
 
-/*夜间背景图*/
+/*夜间背景稍暗*/
 body.hope-ui-dark::before {
-    content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	background-attachment: fixed;
-	background: transparent url(../img/bg_main.webp) center center no-repeat;
 	filter: blur(5px) brightness(0.25);
-	background-size: cover;
-	transform: scale(1);
 }
 
-/*主列表夜间模式透明，50%这数值是控制透明度大小的*/
-.obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-iigjoxS-css {
+/** 头部区域 */
+.hope-ui-light .header .header-right > .hope-c-ivMHWx-hZistB-cv.hope-icon-button{
+	background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/** 主内容区域 */
+.hope-c-PJLV.hope-c-PJLV-iicyfOA-css {
+	z-index: 1;
+}
+
+/*主列表夜间模式透明*/
+.obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-iigjoxS-css { 
     background-color: rgb(0 0 0 / 50%) !important;
 }
 
-/*readme夜间模式透明，50%这数值是控制透明度大小的*/
+/*readme夜间模式透明*/
 .hope-c-PJLV.hope-c-PJLV-iiuDLME-css {
-    z-index: 1;
     background-color: rgb(0 0 0 / 50%) !important;
 }
 
-/*主列表透明*/
+/*主列表白天透明*/
 .obj-box.hope-stack.hope-c-dhzjXW.hope-c-PJLV.hope-c-PJLV-igScBhH-css {
     background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/*readme透明*/
+/*readme白天透明*/
 .hope-c-PJLV.hope-c-PJLV-ikSuVsl-css {
-    z-index: 1;
     background-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-/*顶部右上角切换按钮透明*/
-.hope-c-ivMHWx-hZistB-cv.hope-icon-button {
-    background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 /*右下角侧边栏按钮透明*/
 .hope-c-PJLV-ijgzmFG-css {
     background-color: rgba(255, 255, 255, 0.2) !important;
 }
-
+/*右下角侧边栏按钮白天透明*/
 body.hope-ui-light .hope-c-PJLV-ijgzmFG-css {
     background-color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -89,5 +82,6 @@ body.hope-ui-light .hope-c-PJLV-ijgzmFG-css {
 @media screen and (max-width:960px) {
     body.hope-ui-light::before, body.hope-ui-dark::before {
 		background: transparent url(../img/bg_main_m.webp) center center no-repeat;
+		background-size: cover;
     }
 }
