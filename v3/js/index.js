@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2023-03-31 17:00:13
  * @LastEditors: kasuie
- * @LastEditTime: 2023-04-02 00:01:37
+ * @LastEditTime: 2023-04-02 00:23:58
  * @Description: 
  */
 let footer = false, desc = false;
@@ -19,7 +19,7 @@ const setDesc = () => {
     let target = document.querySelector(".markdown-body > p");
     if (target && target.innerText === "${placeholder}") {
         self.style.display = "unset";
-        target.parentElement.innerHTML = self;
+        target.parentNode.innerHTML = self;
         console.log(target.parentElement);
         desc = true;
     }
