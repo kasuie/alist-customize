@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2023-03-31 17:00:13
  * @LastEditors: kasuie
- * @LastEditTime: 2023-04-01 23:09:07
+ * @LastEditTime: 2023-04-02 00:01:37
  * @Description: 
  */
 let footer = false, desc = false;
@@ -18,8 +18,9 @@ const setDesc = () => {
     const self = document.querySelector(".d-kasuie");
     let target = document.querySelector(".markdown-body > p");
     if (target && target.innerText === "${placeholder}") {
-        target = self;
         self.style.display = "unset";
+        target.parentElement.innerHTML = self;
+        console.log(target.parentElement);
         desc = true;
     }
 }
