@@ -84,3 +84,10 @@ body.hope-ui-light .hope-c-PJLV-ijgzmFG-css {
 .hope-ui-dark pre {
     background-color: rgba(255, 255, 255, 0) !important;
 }
+
+/** 屏幕宽度小于960用适合尺寸的背景图片 */
+@media screen and (max-width:960px) {
+    body.hope-ui-light::before, body.hope-ui-dark::before {
+		background: transparent url(../img/bg_main_m.webp) center center no-repeat;
+    }
+}
