@@ -1,0 +1,121 @@
+
+  ul.d-kasuie-social {
+    display:flex;    
+    align-items: center;
+    gap: 0 25px;    
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
+  ul.d-kasuie-social li {
+    list-style:none;
+  }
+  ul.d-kasuie-social li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    transition:.5s;
+  }
+  ul.d-kasuie-social li a span {
+    position:absolute;
+    transition: transform .5s;
+  }
+  ul.d-kasuie-social li a img {
+    width: 24px;
+    height: 24px;
+  }
+  ul.d-kasuie-social li a span:nth-child(1),
+  ul.d-kasuie-social li a span:nth-child(3){
+    width:100%;
+    height:2px;
+    background: #fff;;
+  }
+  ul.d-kasuie-social li a span:nth-child(1) {
+    top:0;
+    left:0;
+    transform-origin: right;
+  }
+  ul.d-kasuie-social li a:hover span:nth-child(1) {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:transform .5s;
+  }
+  
+  ul.d-kasuie-social li a span:nth-child(3) {
+    bottom:0;
+    left:0;
+    transform-origin: left;
+  }
+  ul.d-kasuie-social li a:hover span:nth-child(3) {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition:transform .5s;
+  }
+  
+  ul.d-kasuie-social li a span:nth-child(2),
+  ul.d-kasuie-social li a span:nth-child(4){
+    width:2px;
+    height:100%;
+    background: #fff;
+  }
+  .hope-ui-light  ul.d-kasuie-social li a span {
+    background: rgb(24, 144, 255) !important;
+  }
+  ul.d-kasuie-social li a span:nth-child(2) {
+    top:0;
+    left:0;
+    transform:scale(0);
+    transform-origin: bottom;
+  }
+  ul.d-kasuie-social li a:hover span:nth-child(2) {
+    transform: scale(1);
+    transform-origin: top;
+    transition:transform .5s;
+  }
+  ul.d-kasuie-social li a span:nth-child(4) {
+    top:0;
+    right:0;
+    transform:scale(0);
+    transform-origin: top;
+  }
+  ul.d-kasuie-social li a:hover span:nth-child(4) {
+    transform: scale(1);
+    transform-origin: bottom;
+    transition:transform .5s;
+  }
+  
+  .facebook:hover {
+    color: #3b5998;
+  }
+  .facebook:hover span { 
+    background: #3b5998;
+  }
+  .twitter:hover {
+    color: #1da1f2;
+  }
+  .twitter:hover span { 
+    background: #1da1f2;
+  }
+  .instagram:hover {
+    color: #c32aa3;
+  }
+  .instagram:hover span { 
+    background: #c32aa3;
+  }
+  .google:hover {
+    color: #dd4b39;
+  }
+  .google:hover span { 
+    background: #dd4b39;
+  }
+  ul.d-kasuie-social li a .twitter {
+    color: #1da1f2;
+  }
+  ul.d-kasuie-social li a:hover:nth-child(3) {
+    color: #c32aa3;
+  }
+  ul.d-kasuie-social li a:hover:nth-child(4) {
+    color: #dd4b39;
+  }
