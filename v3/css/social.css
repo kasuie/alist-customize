@@ -4,7 +4,7 @@
     align-items: center;
     gap: 0 25px;    
     justify-content: flex-end;
-    padding-right: 40px;
+    padding: 20px 40px 0 0;
   }
   ul.d-kasuie-social li {
     list-style:none;

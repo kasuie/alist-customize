@@ -12,7 +12,7 @@
 
 /** 简介区域 */
 .d-kasuie-desc {
-    padding: 10px 0;
+    padding: 10px 0 25px;
 }
 .d-kasuie-desc > div {
     line-height: 32px;
