@@ -1,0 +1,76 @@
+/* ==UserStyle==
+@name           dist.kasuie.cc - Apr 2024
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+@-moz-document url-prefix("https://dist.kasuie.cc/")
+{
+  :root {
+    --mio-main: 255, 255, 255;
+    --mio-bg: 249, 249, 249;
+
+    .hope-ui-dark {
+      --mio-main: 0, 0, 0;
+      --mio-bg: 249, 249, 249;
+    }
+  }
+
+  body {
+    /** 背景 */
+    &.hope-ui-light::before,
+    &.hope-ui-dark::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      background-attachment: fixed;
+      background: transparent url(https://kasuie.cc/images/bg.webp) center
+        center no-repeat;
+      background-size: cover;
+      transform: scale(1);
+    }
+    /*白天背景稍亮*/
+    &.hope-ui-light::before {
+      filter: blur(5px) brightness(0.7);
+    }
+
+    /*夜间背景稍暗*/
+    &.hope-ui-dark::before {
+      filter: blur(5px) brightness(0.25);
+    }
+
+    div#root {
+      /*头部*/
+      div.header {
+        background: transparent;
+        z-index: 1;
+      }
+
+      /*内容部分*/
+      div.body {
+        /*导航部分*/
+        nav.nav {
+          color: #fff;
+          background: transparent;
+          z-index: 1;
+        }
+        /*列表部分*/
+        div.obj-box {
+          background-color: rgba(var(--mio-main), 0.3);
+          z-index: 1;
+        }
+      }
+
+      /*底部*/
+      div.footer {
+        display: none;
+      }
+    }
+  }
+}
