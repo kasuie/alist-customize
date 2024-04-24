@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 16:22:55
+ * @LastEditTime: 2024-04-24 17:14:16
  * @Description:
  */
 let footer = false;
@@ -37,27 +37,58 @@ const onPatchStyle = (style) => {
   head.appendChild(styleElement);
 };
 
-const renderFooter = () => {
+const onCreateElement = (tag, attrs) => {
+  const dom = document.createElement(tag);
+  if (attrs && typeof attrs == "object") {
+    for (const key in attrs) {
+      if (Object.hasOwnProperty.call(attrs, key)) {
+        dom.setAttribute(key, attrs[key]);
+      }
+    }
+  }
+  return dom;
+};
+
+const renderFooter = (data) => {
   const target = document.querySelector(".footer > div");
   if (target) {
-    onPatchStyle(footerStyle);
-    target.classList.add("mio-footer-main");
-    target.innerHTML = `
-            <img src='https://api.iowen.cn/favicon/kasuie.cc.png' />
-            <a target='_blank' rel='noopener noreferrer' href='https://kasuie.cc'>©Theme by kasuie</a>
-            <span>|</span>
-            <img src='https://api.iowen.cn/favicon/github.com.png' />
-            <a target='_blank' rel='noopener noreferrer' href='https://github.com/kasuie'>Github</a>
-            <span>|</span>
-            <a href="/@manage">管理</a>
-        `;
+    target.innerHTML = "";
+    if (data?.length) {
+      for (let index = 0; index < data.length; index++) {
+        const { url: href, text, icon, target: aTarget } = data[index];
+        const aDom = onCreateElement("a", { target: aTarget || "_self", href });
+        const ImgDom = icon
+          ? onCreateElement("img", {
+              src: `https://api.iowen.cn/favicon/${new URL(url).host}.png`,
+            })
+          : null;
+        if (!index) {
+          target.innerHTML = ImgDom
+            ? target.innerHTML + ImgDom + aDom
+            : target.innerHTML + aDom;
+        } else {
+          target.innerHTML = ImgDom
+            ? "<span>|</span>" + target.innerHTML + ImgDom + aDom
+            : "<span>|</span>" + target.innerHTML + aDom;
+        }
+      }
+    }
     footer = true;
   }
 };
 
-const interval = setInterval(() => {
-  renderFooter();
-  if (footer) {
-    clearInterval(interval);
+const init = () => {
+  const footerDataDom = document.querySelector("#footer-data");
+  if (footerDataDom) {
+    onPatchStyle(footerStyle);
+    let footerData = JSON.parse(
+      document.querySelector("#footer-data").innerText
+    );
+    const interval = setInterval(() => {
+      if (footer) clearInterval(interval);
+      renderFooter(footerData);
+    }, 300);
   }
-}, 300);
+};
+
+init();
