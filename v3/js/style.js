@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 17:23:36
+ * @LastEditTime: 2024-04-24 17:29:49
  * @Description:
  */
 let footer = false;
@@ -19,8 +19,8 @@ const footerStyle = `
       transition: all 0.3s ease-in-out;
   
       > img {
-        width: 18px;
-        height: 18px;
+        width: 18px !important;
+        height: 18px !important;
         border-radius: 50%;
       }
   
