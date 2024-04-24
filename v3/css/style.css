@@ -204,7 +204,8 @@ div#root div.body div.obj-box span.hope-c-iojPKw svg {
 }
 
 /*底部MD*/
-div#root div.body div.hope-c-PJLV-ikSuVsl-css {
+div#root div.body div.hope-c-PJLV-ikSuVsl-css,
+div#root div.body .hope-c-PJLV-iiuDLME-css {
   background-color: rgba(var(--mio-main), 0.3);
   backdrop-filter: blur(5px);
 }
