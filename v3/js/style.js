@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 17:29:49
+ * @LastEditTime: 2024-04-24 17:35:46
  * @Description:
  */
 let footer = false;
@@ -13,21 +13,19 @@ const footerStyle = `
     padding-top: 0;
     bottom: 0;
     display: flex !important;
-  
-    .mio-footer-main {
-      font-size: 14px;
-      transition: all 0.3s ease-in-out;
-  
-      > img {
-        width: 18px !important;
-        height: 18px !important;
-        border-radius: 50%;
-      }
-  
-      > a:hover {
-        text-decoration: underline;
-      }
-    }
+  }
+  .mio-footer-main {
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+  }
+  .mio-footer-main > img {
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50%;
+  }
+
+  .mio-footer-main > a:hover {
+    text-decoration: underline;
   }
 `;
 const onPatchStyle = (style) => {
