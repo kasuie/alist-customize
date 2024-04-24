@@ -33,15 +33,13 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(https://kasuie.cc/api/img/bg?size=master);
-    /* background-image: url(https://kasuie.cc/images/bg.webp); */
+    background-image: url(https://kasuie.cc/api/img/bg?size=regular);
     z-index: 0;
   }
 
   @media screen and (max-width: 960px) {
     &::before {
-      background-image: url(https://kasuie.cc/api/img/bg?type=mobile&size=master);
-      /* background-image: url(https://kasuie.cc/images/bg.webp); */
+      background-image: url(https://kasuie.cc/api/img/bg?type=mobile&size=regular);
     }
   }
 
