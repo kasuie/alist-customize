@@ -1,6 +1,6 @@
 :root {
   --mio-main: 255, 255, 255;
-  --mio-bg: 249, 249, 249;
+  --mio-text: 0, 0, 0;
   --mio-primary: 100, 209, 226;
   --mio-primary50: 63, 194, 214;
   --hope-colors-info9: rgba(var(--mio-primary), 1);
@@ -10,7 +10,7 @@
 
   .hope-ui-dark {
     --mio-main: 0, 0, 0;
-    --mio-bg: 249, 249, 249;
+    --mio-text: 255, 255, 255;
     --mio-primary: 100, 209, 226;
     --mio-primary50: 63, 194, 214;
     --hope-colors-info9: rgba(var(--mio-primary), 1);
@@ -45,12 +45,12 @@ body {
     }
   }
 
-  /*白天背景稍亮*/
+  /**白天背景稍亮*/
   &.hope-ui-light::before {
     filter: blur(3px) brightness(0.7);
   }
 
-  /*夜间背景稍暗*/
+  /**夜间背景稍暗*/
   &.hope-ui-dark::before {
     filter: blur(3px) brightness(0.4);
   }
@@ -59,46 +59,42 @@ body {
     position: relative;
     z-index: 1;
 
-    /*管理后台*/
+    /**管理后台*/
     div.hope-c-PJLV-iiLzBwx-css {
       background: transparent;
 
-      /*头部*/
+      /**头部*/
       header {
         background: rgba(var(--mio-main), 0.3);
       }
 
-      /*内容区*/
+      /**内容区*/
       div.hope-c-PJLV-ibpTetR-css {
-        /*侧边栏*/
+        /**侧边栏*/
         > div:first-child {
           background-color: rgba(var(--mio-main), 0.3);
 
           div.hope-c-PJLV-ibBheSN-css {
             color: var(--mio-main);
-
-            svg {
-              color: currentcolor;
-            }
           }
 
-          /*tag a*/
+          /**tag a*/
           a.hope-c-PJLV-ikmVjeJ-css {
             color: rgba(var(--mio-primary));
             background-color: rgba(var(--mio-primary), 0.2);
           }
-          /*暗色模式*/
+          /**暗色模式*/
           .hope-c-PJLV-ijrehjy-css {
             background: rgba(var(--mio-main), 0.3);
           }
-          /*亮色模式*/
+          /**亮色模式*/
           .hope-c-PJLV-ikaEncD-css {
             background: rgba(var(--mio-primary), 0.3);
           }
         }
-        /*主内容区*/
+        /**主内容区*/
         div.hope-c-PJLV-ijycFhp-css {
-          /*卡片*/
+          /**卡片*/
           div.hope-c-PJLV-iiBrJnl-css,
           div.hope-c-PJLV-iiVJRSE-css {
             transition: all 0.2s ease-in-out;
@@ -111,7 +107,7 @@ body {
         }
       }
 
-      /*字段*/
+      /**字段*/
       .hope-c-kvTTWD-hYRNAb-variant-filled {
         background: rgba(var(--mio-main), 0.2);
 
@@ -119,7 +115,7 @@ body {
           border-color: rgba(var(--mio-primary), 0.5);
         }
       }
-      /*开关*/
+      /**开关*/
       .hope-c-mHASU-byiOue-variant-filled {
         color: rgb(var(--mio-primary), 0.5);
         background-color: rgba(var(--mio-main), 0.2);
@@ -135,37 +131,94 @@ body {
       }
     }
 
-    /*头部*/
+    /**头部*/
     div.header {
       background: transparent;
+
+      .header-left {
+        width: 40px;
+        height: 40px;
+      }
+
+      .header-right > button {
+        background: transparent;
+      }
+
+      svg {
+        color: rgba(var(--mio-primary));
+      }
     }
 
-    /*内容部分*/
+    /**内容部分*/
     div.body {
       /*导航部分*/
       nav.nav {
         color: #fff;
         background: transparent;
-      }
 
+        &::after {
+          background-color: transparent;
+        }
+      }
       /*列表部分*/
       div.obj-box {
         background-color: rgba(var(--mio-main), 0.3);
+        min-height: 300px;
         max-height: calc(100vh - 180px);
         overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 4px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          cursor: pointer;
+          border-radius: 8px;
+          transition-duration: 150ms;
+          background: rgba(var(--mio-text), 0.15);
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 8px;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+          background: rgba(255, 255, 255, 0.05);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          /**滚动条整体样式*/
+          background-color: rgba(var(--mio-primary), 0.4);
+        }
+
+        span.hope-c-iojPKw svg {
+          color: rgba(var(--mio-main), 1);
+        }
+      }
+      /**侧边栏*/
+      div.hope-c-PJLV-ieGWMbI-css {
+        background-color: rgba(var(--mio-main), 0.3);
+
+        p.hope-c-PJLV-iZZmce-css {
+          background-color: rgba(var(--mio-primary), 0.7);
+        }
+
+        p.hope-c-PJLV-igSqJIB-css {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 200px;
+        }
+      }
+
+      svg {
+        color: rgba(var(--mio-primary));
       }
     }
 
-    svg {
-      color: rgba(var(--mio-primary));
-    }
-
-    /*底部*/
+    /**底部*/
     div.footer {
       display: none;
     }
   }
-  /*工具栏*/
+  /**工具栏*/
   div.left-toolbar-box {
     z-index: 1;
 
@@ -183,16 +236,23 @@ body {
     }
   }
 
+  /**tooltip提示*/
   div.hope-tooltip {
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(var(--mio-primary), 0.5);
+    background-color: rgba(var(--mio-primary), 1);
   }
 
+  /**加载图标*/
   div.hope-spinner {
     color: rgba(var(--mio-primary));
   }
 
-  /*下拉区域*/
+  /**menu下拉区域*/
+  div.hope-menu__content {
+    background-color: rgba(var(--mio-main), 0.3);
+  }
+
+  /**select下拉区域*/
   div.hope-c-XJURY {
     background: rgba(var(--mio-main), 0.8);
   }
