@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 17:35:46
+ * @LastEditTime: 2024-04-24 18:13:45
  * @Description:
  */
 let footer = false;
@@ -39,7 +39,7 @@ const onCreateElement = (tag, attrs) => {
   const dom = document.createElement(tag);
   if (attrs && typeof attrs == "object") {
     for (const key in attrs) {
-      if (Object.hasOwnProperty.call(attrs, key)) {
+      if (Object.hasOwnProperty.call(attrs, key) && attrs[key]) {
         dom.setAttribute(key, attrs[key]);
       }
     }
@@ -56,7 +56,7 @@ const renderFooter = (data) => {
     if (data?.length) {
       for (let index = 0; index < data.length; index++) {
         const { url: href, text, icon, target: aTarget } = data[index];
-        const aDom = onCreateElement("a", { target: aTarget || "_self", href });
+        const aDom = onCreateElement("a", { target: aTarget || null, href });
         const ImgDom = icon
           ? onCreateElement("img", {
               src: `https://api.iowen.cn/favicon/${new URL(href).host}.png`,
