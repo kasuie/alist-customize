@@ -229,19 +229,17 @@ div.left-toolbar-box {
   z-index: 1;
 }
 
-div.left-toolbar-box svg.hope-icon {
-  color: rgba(var(--mio-primary));
-}
-
 div.left-toolbar-box div.left-toolbar {
   background-color: rgba(var(--mio-main), 0.8);
 }
 
-div.left-toolbar-box div.left-toolbar svg.hope-icon {
+div.left-toolbar-box div.left-toolbar svg.hope-icon,
+div.left-toolbar-box svg.hope-icon {
   color: rgba(var(--mio-primary));
 }
 
-div.left-toolbar-box div.left-toolbar svg.hope-icon:hover {
+div.left-toolbar-box div.left-toolbar svg.hope-icon:hover,
+div.left-toolbar-box svg.hope-icon:hover {
   color: rgba(255, 255, 255, 1);
   background-color: rgba(var(--mio-primary));
 }
