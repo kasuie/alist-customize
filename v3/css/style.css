@@ -20,238 +20,245 @@
   }
 }
 
-body {
-  /** 背景 */
-  &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(https://kasuie.cc/api/img/bg?size=regular);
-    z-index: 0;
+/** 背景 */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://kasuie.cc/api/img/bg?size=regular);
+  z-index: 0;
+}
+
+/**白天背景稍亮*/
+body.hope-ui-light::before {
+  filter: blur(3px) brightness(0.7);
+}
+/**夜间背景稍暗*/
+body.hope-ui-dark::before {
+  filter: blur(3px) brightness(0.3);
+}
+
+@media screen and (max-width: 960px) {
+  body::before {
+    background-image: url(https://kasuie.cc/api/img/bg?type=mobile&size=regular);
   }
+}
 
-  @media screen and (max-width: 960px) {
-    &::before {
-      background-image: url(https://kasuie.cc/api/img/bg?type=mobile&size=regular);
-    }
-  }
+div#root {
+  position: relative;
+  z-index: 1;
+}
 
-  /**白天背景稍亮*/
-  &.hope-ui-light::before {
-    filter: blur(3px) brightness(0.7);
-  }
+/**管理后台*/
+div#root div.hope-c-PJLV-iiLzBwx-css {
+  background: transparent;
+}
 
-  /**夜间背景稍暗*/
-  &.hope-ui-dark::before {
-    filter: blur(3px) brightness(0.3);
-  }
+/**头部*/
+header {
+  background: rgba(var(--mio-main), 0.3);
+}
 
-  div#root {
-    position: relative;
-    z-index: 1;
+/**内容区*/
 
-    /**管理后台*/
-    div.hope-c-PJLV-iiLzBwx-css {
-      background: transparent;
+/**侧边栏*/
+div.hope-c-PJLV-ibpTetR-css > div:first-child {
+  background-color: rgba(var(--mio-main), 0.3);
+}
 
-      /**头部*/
-      header {
-        background: rgba(var(--mio-main), 0.3);
-      }
+div.hope-c-PJLV-ibpTetR-css > div:first-child div.hope-c-PJLV-ibBheSN-css {
+  color: var(--mio-main);
+}
 
-      /**内容区*/
-      div.hope-c-PJLV-ibpTetR-css {
-        /**侧边栏*/
-        > div:first-child {
-          background-color: rgba(var(--mio-main), 0.3);
+/**tag a*/
+div.hope-c-PJLV-ibpTetR-css > div:first-child a.hope-c-PJLV-ikmVjeJ-css {
+  color: rgba(var(--mio-primary));
+  background-color: rgba(var(--mio-primary), 0.2);
+}
+/**暗色模式*/
+div.hope-c-PJLV-ibpTetR-css > div:first-child .hope-c-PJLV-ijrehjy-css {
+  background: rgba(var(--mio-main), 0.3);
+}
+/**亮色模式*/
+div.hope-c-PJLV-ibpTetR-css > div:first-child .hope-c-PJLV-ikaEncD-css {
+  background: rgba(var(--mio-primary), 0.3);
+}
 
-          div.hope-c-PJLV-ibBheSN-css {
-            color: var(--mio-main);
-          }
+/**主内容区*/
+/**卡片*/
+div.hope-c-PJLV-ibpTetR-css
+  div.hope-c-PJLV-ijycFhp-css
+  div.hope-c-PJLV-iiBrJnl-css,
+div.hope-c-PJLV-ibpTetR-css
+  div.hope-c-PJLV-ijycFhp-css
+  div.hope-c-PJLV-iiVJRSE-css {
+  transition: all 0.2s ease-in-out;
+  background: rgba(var(--mio-main), 0.3);
+}
 
-          /**tag a*/
-          a.hope-c-PJLV-ikmVjeJ-css {
-            color: rgba(var(--mio-primary));
-            background-color: rgba(var(--mio-primary), 0.2);
-          }
-          /**暗色模式*/
-          .hope-c-PJLV-ijrehjy-css {
-            background: rgba(var(--mio-main), 0.3);
-          }
-          /**亮色模式*/
-          .hope-c-PJLV-ikaEncD-css {
-            background: rgba(var(--mio-primary), 0.3);
-          }
-        }
-        /**主内容区*/
-        div.hope-c-PJLV-ijycFhp-css {
-          /**卡片*/
-          div.hope-c-PJLV-iiBrJnl-css,
-          div.hope-c-PJLV-iiVJRSE-css {
-            transition: all 0.2s ease-in-out;
-            background: rgba(var(--mio-main), 0.3);
+div.hope-c-PJLV-ibpTetR-css
+  div.hope-c-PJLV-ijycFhp-css
+  div.hope-c-PJLV-iiBrJnl-css:hover,
+div.hope-c-PJLV-ibpTetR-css
+  div.hope-c-PJLV-ijycFhp-css
+  div.hope-c-PJLV-iiVJRSE-css:hover {
+  border-color: rgba(var(--mio-primary), 0.7);
+}
 
-            &:hover {
-              border-color: rgba(var(--mio-primary), 0.7);
-            }
-          }
-        }
-      }
+/**字段*/
+.hope-c-kvTTWD-hYRNAb-variant-filled {
+  background: rgba(var(--mio-main), 0.2);
+}
 
-      /**字段*/
-      .hope-c-kvTTWD-hYRNAb-variant-filled {
-        background: rgba(var(--mio-main), 0.2);
+.hope-c-kvTTWD-hYRNAb-variant-filled:focus {
+  border-color: rgba(var(--mio-primary), 0.5);
+}
 
-        &:focus {
-          border-color: rgba(var(--mio-primary), 0.5);
-        }
-      }
-      /**开关*/
-      .hope-c-mHASU-byiOue-variant-filled {
-        color: rgb(var(--mio-primary), 0.5);
-        background-color: rgba(var(--mio-main), 0.2);
+/**开关*/
+.hope-c-mHASU-byiOue-variant-filled {
+  color: rgb(var(--mio-primary), 0.5);
+  background-color: rgba(var(--mio-main), 0.2);
+}
 
-        &[data-checked] {
-          background-color: currentcolor;
-        }
+.hope-c-mHASU-byiOue-variant-filled[data-checked] {
+  background-color: currentcolor;
+}
 
-        &[data-focus] {
-          box-shadow: 0 0 0 3px var(--mio-primary);
-          border-color: var(--mio-primary);
-        }
-      }
-    }
+.hope-c-mHASU-byiOue-variant-filled[data-focus] {
+  box-shadow: 0 0 0 3px var(--mio-primary);
+  border-color: var(--mio-primary);
+}
 
-    /**头部*/
-    div.header {
-      background: transparent;
+/**头部*/
+div#root div.header {
+  background: transparent;
+}
 
-      .header-left {
-        width: 40px;
-        height: 40px;
-      }
+div#root div.header .header-left {
+  width: 40px;
+  height: 40px;
+}
 
-      .header-right > button {
-        background: transparent;
-      }
+div#root div.header .header-right > button {
+  background: transparent;
+}
 
-      svg {
-        color: rgba(var(--mio-primary));
-      }
-    }
+div#root div.header svg {
+  color: rgba(var(--mio-primary));
+}
 
-    /**内容部分*/
-    div.body {
-      /*导航部分*/
-      nav.nav {
-        color: #fff;
-        background: transparent;
+/**内容部分*/
 
-        &::after {
-          background-color: transparent;
-        }
-      }
-      /*列表部分*/
-      div.obj-box {
-        background-color: rgba(var(--mio-main), 0.3);
-        min-height: 300px;
-        max-height: calc(100vh - 180px);
-        overflow-y: auto;
+/*导航部分*/
+div#root div.body nav.nav {
+  color: #fff;
+  background: transparent;
+}
+div#root div.body nav.nav::after {
+  background-color: transparent;
+}
 
-        &::-webkit-scrollbar {
-          width: 4px;
-          transition: all 0.3s ease-in-out;
-        }
+/*列表部分*/
+div#root div.body div.obj-box {
+  background-color: rgba(var(--mio-main), 0.3);
+  min-height: 300px;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
 
-        &::-webkit-scrollbar-thumb {
-          cursor: pointer;
-          border-radius: 8px;
-          transition-duration: 150ms;
-          background: rgba(var(--mio-text), 0.15);
-          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-        &::-webkit-scrollbar-track {
-          border-radius: 8px;
-          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
-          background: rgba(255, 255, 255, 0.05);
-        }
-        &::-webkit-scrollbar-thumb:hover {
-          /**滚动条整体样式*/
-          background-color: rgba(var(--mio-primary), 0.4);
-        }
+div#root div.body div.obj-box::-webkit-scrollbar {
+  width: 4px;
+  transition: all 0.3s ease-in-out;
+}
 
-        span.hope-c-iojPKw svg {
-          color: rgba(var(--mio-main), 1);
-        }
-      }
-      /**侧边栏*/
-      div.hope-c-PJLV-ieGWMbI-css {
-        background-color: rgba(var(--mio-main), 0.3);
+div#root div.body div.obj-box::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 8px;
+  transition-duration: 150ms;
+  background: rgba(var(--mio-text), 0.15);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
 
-        p.hope-c-PJLV-iZZmce-css {
-          background-color: rgba(var(--mio-primary), 0.7);
-        }
+div#root div.body div.obj-box::-webkit-scrollbar-track {
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
 
-        p.hope-c-PJLV-igSqJIB-css {
-          text-overflow: ellipsis;
-          overflow: hidden;
-          max-width: 200px;
-        }
-      }
+div#root div.body div.obj-box::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(var(--mio-primary), 0.4);
+}
 
-      svg {
-        color: rgba(var(--mio-primary));
-      }
-    }
+div#root div.body div.obj-box span.hope-c-iojPKw svg {
+  color: rgba(var(--mio-main), 1);
+}
 
-    /**底部*/
-    div.footer {
-      display: none;
-    }
-  }
-  /**工具栏*/
-  div.left-toolbar-box {
-    z-index: 1;
+/**侧边栏*/
+div#root div.body div.hope-c-PJLV-ieGWMbI-css {
+  background-color: rgba(var(--mio-main), 0.3);
+}
 
-    div.left-toolbar {
-      background-color: rgba(var(--mio-main), 0.8);
-    }
+div#root div.body div.hope-c-PJLV-ieGWMbI-css p.hope-c-PJLV-iZZmce-css {
+  background-color: rgba(var(--mio-primary), 0.7);
+}
 
-    svg.hope-icon {
-      color: rgba(var(--mio-primary));
+div#root div.body div.hope-c-PJLV-ieGWMbI-css p.hope-c-PJLV-igSqJIB-css {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 200px;
+}
 
-      &:hover {
-        color: rgba(255, 255, 255, 1);
-        background-color: rgba(var(--mio-primary));
-      }
-    }
-  }
+div#root div.body svg {
+  color: rgba(var(--mio-primary));
+}
 
-  /**tooltip提示*/
-  div.hope-tooltip {
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(var(--mio-primary), 1);
-  }
+/**底部*/
+div#root div.footer {
+  display: none;
+}
 
-  /**加载图标*/
-  div.hope-spinner {
-    color: rgba(var(--mio-primary));
-  }
+/**工具栏*/
+div.left-toolbar-box {
+  z-index: 1;
+}
 
-  /**menu下拉区域*/
-  div.hope-menu__content {
-    background-color: rgba(var(--mio-main), 0.3);
-  }
+div.left-toolbar-box div.left-toolbar {
+  background-color: rgba(var(--mio-main), 0.8);
+}
 
-  /**select下拉区域*/
-  div.hope-c-XJURY {
-    background: rgba(var(--mio-main), 0.8);
-  }
+div.left-toolbar-box div.left-toolbar svg.hope-icon {
+  color: rgba(var(--mio-primary));
+}
+
+div.left-toolbar-box div.left-toolbar svg.hope-icon:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(var(--mio-primary));
+}
+
+/**tooltip提示*/
+div.hope-tooltip {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(var(--mio-primary), 1);
+}
+
+/**加载图标*/
+div.hope-spinner {
+  color: rgba(var(--mio-primary));
+}
+
+/**menu下拉区域*/
+div.hope-menu__content {
+  background-color: rgba(var(--mio-main), 0.3);
+}
+
+/**select下拉区域*/
+div.hope-c-XJURY {
+  background: rgba(var(--mio-main), 0.8);
 }
