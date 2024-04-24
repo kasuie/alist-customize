@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 17:16:03
+ * @LastEditTime: 2024-04-24 17:20:17
  * @Description:
  */
 let footer = false;
@@ -63,15 +63,13 @@ const renderFooter = (data) => {
             })
           : null;
         aDom && (aDom.innerText = text);
-        if (!index) {
-          target.innerHTML = ImgDom
-            ? target.innerHTML + ImgDom + aDom
-            : target.innerHTML + aDom;
-        } else {
-          target.innerHTML = ImgDom
-            ? "<span>|</span>" + target.innerHTML + ImgDom + aDom
-            : "<span>|</span>" + target.innerHTML + aDom;
+        if (index) {
+          const split = onCreateElement("span", null);
+          split.innerText = "|";
+          split && target.appendChild(split);
         }
+        ImgDom && target.appendChild(ImgDom);
+        aDom && target.appendChild(aDom);
       }
     }
     footer = true;
