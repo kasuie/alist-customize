@@ -1,0 +1,21 @@
+.footer {
+  position: fixed;
+  padding-top: 0;
+  bottom: 0;
+  display: flex !important;
+
+  .mio-footer-main {
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+
+    > img {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+    }
+
+    > a:hover {
+      text-decoration: underline;
+    }
+  }
+}
