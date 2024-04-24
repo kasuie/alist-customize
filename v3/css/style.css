@@ -1,76 +1,185 @@
-/* ==UserStyle==
-@name           dist.kasuie.cc - Apr 2024
-@namespace      github.com/openstyles/stylus
-@version        1.0.0
-@description    A new userstyle
-@author         Me
-==/UserStyle== */
+:root {
+  --mio-main: 255, 255, 255;
+  --mio-bg: 249, 249, 249;
+  --mio-primary: 100, 209, 226;
+  --mio-primary50: 63, 194, 214;
+  --hope-colors-info9: rgba(var(--mio-primary), 1);
+  --hope-colors-info4: rgba(var(--mio-primary), 1);
+  --hope-colors-info5: rgba(var(--mio-primary50), 1);
+  --hope-colors-info11: rgba(var(--mio-main), 1);
 
-@-moz-document url-prefix("https://dist.kasuie.cc/")
-{
-  :root {
-    --mio-main: 255, 255, 255;
+  .hope-ui-dark {
+    --mio-main: 0, 0, 0;
     --mio-bg: 249, 249, 249;
+    --mio-primary: 100, 209, 226;
+    --mio-primary50: 63, 194, 214;
+    --hope-colors-info9: rgba(var(--mio-primary), 1);
+    --hope-colors-info4: rgba(var(--mio-primary), 0.4);
+    --hope-colors-info5: rgba(var(--mio-primary50), 0.4);
+    --hope-colors-info11: rgba(var(--mio-primary50), 1);
+  }
+}
 
-    .hope-ui-dark {
-      --mio-main: 0, 0, 0;
-      --mio-bg: 249, 249, 249;
-    }
+body {
+  /** 背景 */
+  &.hope-ui-light::before,
+  &.hope-ui-dark::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: transparent url(https://kasuie.cc/images/bg.webp) center center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    transform: scale(1);
+    z-index: 0;
+  }
+  /*白天背景稍亮*/
+  &.hope-ui-light::before {
+    filter: blur(5px) brightness(0.7);
   }
 
-  body {
-    /** 背景 */
-    &.hope-ui-light::before,
-    &.hope-ui-dark::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      min-height: 100%;
-      background-attachment: fixed;
-      background: transparent url(https://kasuie.cc/images/bg.webp) center
-        center no-repeat;
-      background-size: cover;
-      transform: scale(1);
-    }
-    /*白天背景稍亮*/
-    &.hope-ui-light::before {
-      filter: blur(5px) brightness(0.7);
+  /*夜间背景稍暗*/
+  &.hope-ui-dark::before {
+    filter: blur(5px) brightness(0.25);
+  }
+
+  div#root {    
+    position: relative;
+    z-index: 1;
+      
+    /*管理后台*/
+    div.hope-c-PJLV-iiLzBwx-css {
+      background: transparent;
+        
+        /*头部*/
+        header {
+            background: rgba(var(--mio-main), 0.3);
+        }
+        
+        /*内容区*/
+        div.hope-c-PJLV-ibpTetR-css {
+            
+            /*侧边栏*/
+            > div:first-child{
+                background: rgba(var(--mio-main), 0.3);
+                
+                div.hope-c-PJLV-ibBheSN-css {
+                    color: var(--mio-main);
+                }
+                
+                /*tag a*/
+                a.hope-c-PJLV-ikmVjeJ-css {
+                    color: rgba(var(--mio-primary));
+                    background-color: rgba(var(--mio-primary), 0.2);
+                }
+                /*暗色模式*/
+                .hope-c-PJLV-ijrehjy-css {
+                  background: rgba(var(--mio-main), 0.3);
+                }
+                /*亮色模式*/
+                .hope-c-PJLV-ikaEncD-css {
+                  background: rgba(var(--mio-primary), 0.3);
+                }
+            }
+            /*主内容区*/
+            div.hope-c-PJLV-ijycFhp-css {
+                
+                /*卡片*/
+                div.hope-c-PJLV-iiBrJnl-css, div.hope-c-PJLV-iiVJRSE-css {
+                    transition: all .2s ease-in-out;
+                    background: rgba(var(--mio-main), 0.3);
+                    
+                    &:hover {
+                        border-color: rgba(var(--mio-primary), 0.7);
+                    }
+                }
+            }
+        }
+      
+        /*字段*/
+        .hope-c-kvTTWD-hYRNAb-variant-filled {
+            background: rgba(var(--mio-main), 0.2);
+            
+            &:focus {
+              border-color: rgba(var(--mio-primary), 0.5);
+            }
+        }
+        /*开关*/
+        .hope-c-mHASU-byiOue-variant-filled {
+            color: rgb(var(--mio-primary), 0.5);
+            background-color: rgba(var(--mio-main), 0.2);
+            
+            &[data-checked] {
+              background-color: currentcolor;
+            }
+            
+            &[data-focus] {
+              box-shadow: 0 0 0 3px var(--mio-primary);
+              border-color: var(--mio-primary);
+            }
+        }
     }
 
-    /*夜间背景稍暗*/
-    &.hope-ui-dark::before {
-      filter: blur(5px) brightness(0.25);
+    /*头部*/
+    div.header {
+      background: transparent;
     }
 
-    div#root {
-      /*头部*/
-      div.header {
+    /*内容部分*/
+    div.body {
+        
+      /*导航部分*/
+      nav.nav {
+        color: #fff;
         background: transparent;
-        z-index: 1;
       }
-
-      /*内容部分*/
-      div.body {
-        /*导航部分*/
-        nav.nav {
-          color: #fff;
-          background: transparent;
-          z-index: 1;
-        }
-        /*列表部分*/
-        div.obj-box {
-          background-color: rgba(var(--mio-main), 0.3);
-          z-index: 1;
-        }
-      }
-
-      /*底部*/
-      div.footer {
-        display: none;
+        
+      /*列表部分*/
+      div.obj-box {
+        background-color: rgba(var(--mio-main), 0.3);
+        max-height: calc(100vh - 180px);
+        overflow-y: auto;
       }
     }
+    
+    svg {
+      color: rgba(var(--mio-primary));
+    }
+
+    /*底部*/
+    div.footer {
+      display: none;
+    }
+  }
+    /*工具栏*/
+    div.left-toolbar-box {
+      z-index: 1;
+      svg.hope-icon {
+          color: rgba(var(--mio-primary));
+          
+          &:hover {
+              color: rgba(255, 255, 255, 1);
+              background-color: rgba(var(--mio-primary));
+          }
+      }
+        
+    }
+    
+    div.hope-tooltip {
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(var(--mio-primary), 0.5);
+    }
+    
+    div.hope-spinner {
+        color: rgba(var(--mio-primary));
+    }
+  
+  /*下拉区域*/ 
+  div.hope-c-XJURY {
+      background: rgba(var(--mio-main), 0.8);
   }
 }
