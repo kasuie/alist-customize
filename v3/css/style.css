@@ -274,3 +274,24 @@ div.hope-menu__content {
 div.hope-c-XJURY {
   background: rgba(var(--mio-main), 0.8);
 }
+
+/**登录页*/
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifJliWT-css,
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-igjRXTJ-css {
+  display: none;
+}
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ibiABng-css,
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ihWgyFw-css {
+  background-color: transparent;
+}
+
+/**登录框*/
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-iubUra-css,
+div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifjOQLV-css {
+  background-color: rgba(var(--mio-main), 0.5);
+  backdrop-filter: blur(5px);
+}
+
+div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-idKXllh-css a {
+  display: none;
+}
