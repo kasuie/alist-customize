@@ -62,8 +62,8 @@ div#root div.hope-c-PJLV-iiLzBwx-css {
 }
 
 /**头部*/
-header {
-  background: rgba(var(--mio-main), 0.3);
+div#root div.hope-c-PJLV-iiLzBwx-css header {
+  background-color: rgba(var(--mio-main), 0.3);
 }
 
 /**内容区*/
@@ -114,10 +114,12 @@ div.hope-c-PJLV-ibpTetR-css
 
 /**字段*/
 .hope-c-kvTTWD-hYRNAb-variant-filled {
-  background: rgba(var(--mio-main), 0.2);
+  background-color: rgba(var(--mio-main), 0.2);
 }
 
+.hope-c-kvTTWD-hYRNAb-variant-filled:hover,
 .hope-c-kvTTWD-hYRNAb-variant-filled:focus {
+  background-color: rgba(var(--mio-main), 0.7);
   border-color: rgba(var(--mio-primary), 0.5);
 }
 
@@ -171,6 +173,7 @@ div#root div.body div.obj-box {
   min-height: 300px;
   max-height: calc(100vh - 180px);
   overflow-y: auto;
+  backdrop-filter: blur(5px);
 }
 
 div#root div.body div.obj-box::-webkit-scrollbar {
@@ -198,6 +201,12 @@ div#root div.body div.obj-box::-webkit-scrollbar-thumb:hover {
 
 div#root div.body div.obj-box span.hope-c-iojPKw svg {
   color: rgba(var(--mio-main), 1);
+}
+
+/*底部MD*/
+div#root div.body div.hope-c-PJLV-ikSuVsl-css {
+  background-color: rgba(var(--mio-main), 0.3);
+  backdrop-filter: blur(5px);
 }
 
 /**侧边栏*/
