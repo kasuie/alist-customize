@@ -50,7 +50,7 @@ body {
 
   /**夜间背景稍暗*/
   &.hope-ui-dark::before {
-    filter: blur(3px) brightness(0.4);
+    filter: blur(3px) brightness(0.3);
   }
 
   div#root {
