@@ -2,26 +2,45 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 16:09:36
+ * @LastEditTime: 2024-04-24 16:22:55
  * @Description:
  */
 let footer = false;
 
-const onPatchStyle = (src) => {
-  const linkElement = document.createElement("link");
-  linkElement.rel = "stylesheet";
-  linkElement.type = "text/css";
-  linkElement.href = src;
+const footerStyle = `
+  .footer {
+    position: fixed;
+    padding-top: 0;
+    bottom: 0;
+    display: flex !important;
+  
+    .mio-footer-main {
+      font-size: 14px;
+      transition: all 0.3s ease-in-out;
+  
+      > img {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+      }
+  
+      > a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+`;
+const onPatchStyle = (style) => {
+  const styleElement = document.createElement("style");
+  styleElement.textContent = style;
   const head = document.head || document.getElementsByTagName("head")[0];
-  head.insertBefore(linkElement, head.firstChild);
+  head.appendChild(styleElement);
 };
 
 const renderFooter = () => {
   const target = document.querySelector(".footer > div");
   if (target) {
-    onPatchStyle(
-      "https://cdn.jsdelivr.net/gh/kasuie/alist-customize@main/v3/css/patch.min.css"
-    );
+    onPatchStyle(footerStyle);
     target.classList.add("mio-footer-main");
     target.innerHTML = `
             <img src='https://api.iowen.cn/favicon/kasuie.cc.png' />
@@ -41,4 +60,4 @@ const interval = setInterval(() => {
   if (footer) {
     clearInterval(interval);
   }
-}, 200);
+}, 300);
