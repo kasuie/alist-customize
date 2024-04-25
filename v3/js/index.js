@@ -1,46 +1,105 @@
 /*
  * @Author: kasuie
- * @Date: 2023-03-31 17:00:13
+ * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2023-04-02 20:15:39
- * @Description: 
+ * @LastEditTime: 2024-04-25 21:26:14
+ * @Description:
  */
-let footer = false, desc = false, homeIcon = false;
+let footer = false;
 
-const setFooter = () => {
-    const target = document.querySelector(".footer > div");
-    if (target) {
-        target.innerHTML = "<a class='hope-anchor hope-c-iHuheP hope-c-PJLV hope-c-PJLV-idrWMwW-css' target='_blank' rel='noopener noreferrer' href='https://kasuie.cc'>© 2020 - 2023 By KASUIE</a>";
-        footer = true;
-    }
-}
-const setDesc = () => {
-    const self = document.querySelector(".d-kasuie");
-    const target = document.querySelector(".body.hope-c-PJLV-iiHckfM-css");
-    if (target) {
-        self.style.display = "unset";
-        target.appendChild(self);
-        desc = true;
-    }
-}
-// const setHomeIcon = () => {
-//     const homeIcon = document.querySelector("nav.nav > .hope-c-cPYwgm > li.hope-c-khZXrc");
-//     if (homeIcon) {
-//         const homeIconA = homeIcon.getElementsByClassName("nav-link")[0];
-//         homeIconA.innerHTML = "💙";
-//         homeIcon.addEventListener("click", (e) => {
-//             const _homeIconA = document.querySelector("nav.nav > .hope-c-cPYwgm > li.hope-c-khZXrc > a.nav-link");
-//             _homeIconA.innerHTML = "💙";
-//         })
-//         homeIcon = true;
-//     }
-// }
+const footerStyle = `
+  .footer {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex !important;
+  }
+  .mio-footer-main {
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+  }
+  .mio-footer-main > img {
+    width: 18px !important;
+    height: 18px !important;
+    border-radius: 50%;
+  }
 
-let interval = setInterval(() => {
-    setFooter();
-    setDesc();
-    // setHomeIcon();
-    if(footer && desc) {
-        clearInterval(interval);
+  .mio-footer-main > a:hover {
+    text-decoration: underline;
+  }
+
+  .markdown-body li>p {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+`;
+const onPatchStyle = (style) => {
+  const styleElement = document.createElement("style");
+  styleElement.textContent = style;
+  const head = document.head || document.getElementsByTagName("head")[0];
+  head.appendChild(styleElement);
+};
+
+const onCreateElement = (tag, attrs) => {
+  const dom = document.createElement(tag);
+  if (attrs && typeof attrs == "object") {
+    for (const key in attrs) {
+      if (Object.hasOwnProperty.call(attrs, key) && attrs[key]) {
+        dom.setAttribute(key, attrs[key]);
+      }
     }
-}, 200);
+  }
+  return dom;
+};
+
+const renderFooter = (data) => {
+  const target = document.querySelector(".footer > div");
+  if (target) {
+    onPatchStyle(footerStyle);
+    target.innerHTML = "";
+    target.classList.add("mio-footer-main");
+    if (data?.length) {
+      for (let index = 0; index < data.length; index++) {
+        const { url: href, text, icon, target: aTarget } = data[index];
+        const aDom = onCreateElement("a", { target: aTarget || null, href });
+        const ImgDom = icon
+          ? onCreateElement("img", {
+              src: `https://api.iowen.cn/favicon/${new URL(href).host}.png`,
+            })
+          : null;
+        aDom && (aDom.innerText = text);
+        if (index) {
+          const split = onCreateElement("span", null);
+          split.innerText = "|";
+          split && target.appendChild(split);
+        }
+        ImgDom && target.appendChild(ImgDom);
+        aDom && target.appendChild(aDom);
+      }
+    }
+    footer = true;
+  }
+};
+
+const init = () => {
+  const footerDataDom = document.querySelector("#footer-data");
+  if (footerDataDom) {
+    let footerData = JSON.parse(
+      document.querySelector("#footer-data").innerText
+    );
+    let count = 0;
+    const interval = setInterval(() => {
+      if (footer || count > 10) clearInterval(interval);
+      ++count;
+      renderFooter(footerData);
+    }, 300);
+  }
+  // const navHome = document.querySelector(".hope-c-PJLV-ibMsOCJ-css");
+  // if (navHome) {
+  //   navHome.innerHTML = "✨";
+  // }
+};
+
+init();
