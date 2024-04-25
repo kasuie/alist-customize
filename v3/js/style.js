@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 21:07:29
+ * @LastEditTime: 2024-04-25 21:26:14
  * @Description:
  */
 let footer = false;
@@ -10,10 +10,10 @@ let footer = false;
 const footerStyle = `
   .footer {
     position: fixed;
-    padding-top: 0;
     bottom: 0;
-    display: flex !important;
     padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex !important;
   }
   .mio-footer-main {
     font-size: 14px;
