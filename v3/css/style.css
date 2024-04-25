@@ -210,6 +210,11 @@ div#root div.body .hope-c-PJLV-iiuDLME-css {
   backdrop-filter: blur(5px);
 }
 
+/**MD*/
+.markdown-body > ul > li::marker {
+  color: rgba(var(--mio-primary), 1);
+}
+
 /**侧边栏*/
 div#root div.body div.hope-c-PJLV-ieGWMbI-css {
   background-color: rgba(var(--mio-main), 0.3);
@@ -235,7 +240,8 @@ div#root div.footer {
 }
 
 /**工具栏*/
-div.left-toolbar-box {
+div.left-toolbar-box,
+div.center-toolbar {
   z-index: 1;
 }
 
@@ -252,6 +258,11 @@ div.left-toolbar-box div.left-toolbar svg.hope-icon:hover,
 div.left-toolbar-box svg.hope-icon:hover {
   color: rgba(255, 255, 255, 1);
   background-color: rgba(var(--mio-primary));
+}
+
+/**返回顶部*/
+div.hope-c-PJLV-ihMpUpe-css {
+  background-color: rgba(var(--mio-primary)) !important;
 }
 
 /**tooltip提示*/

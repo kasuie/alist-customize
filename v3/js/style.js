@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-24 18:13:45
+ * @LastEditTime: 2024-04-25 17:33:22
  * @Description:
  */
 let footer = false;
@@ -13,6 +13,7 @@ const footerStyle = `
     padding-top: 0;
     bottom: 0;
     display: flex !important;
+    padding-bottom: 10px;
   }
   .mio-footer-main {
     font-size: 14px;
@@ -26,6 +27,12 @@ const footerStyle = `
 
   .mio-footer-main > a:hover {
     text-decoration: underline;
+  }
+
+  .markdown-body li>p {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
 `;
 const onPatchStyle = (style) => {
@@ -77,13 +84,17 @@ const renderFooter = (data) => {
 };
 
 const init = () => {
+  const navHome = document.querySelector(".hope-c-PJLV-ibMsOCJ-css");
+  navHome.innerHTML = "✨";
   const footerDataDom = document.querySelector("#footer-data");
   if (footerDataDom) {
     let footerData = JSON.parse(
       document.querySelector("#footer-data").innerText
     );
+    let count = 0;
     const interval = setInterval(() => {
-      if (footer) clearInterval(interval);
+      if (footer || count > 10) clearInterval(interval);
+      ++count;
       renderFooter(footerData);
     }, 300);
   }
