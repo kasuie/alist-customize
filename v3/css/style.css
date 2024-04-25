@@ -3,20 +3,20 @@
   --mio-text: 0, 0, 0;
   --mio-primary: 100, 209, 226;
   --mio-primary50: 63, 194, 214;
-  --hope-colors-info9: rgba(var(--mio-primary), 1);
-  --hope-colors-info4: rgba(var(--mio-primary), 1);
-  --hope-colors-info5: rgba(var(--mio-primary50), 1);
-  --hope-colors-info11: rgba(var(--mio-main), 1);
+  --hope-colors-info9: rgba(var(--mio-primary-js, --mio-primary), 1);
+  --hope-colors-info4: rgba(var(--mio-primary-js, --mio-primary), 1);
+  --hope-colors-info5: rgba(var(--mio-primary50-js, --mio-primary50), 1);
+  --hope-colors-info11: rgba(var(--mio-main-js, --mio-main), 1);
 
   .hope-ui-dark {
     --mio-main: 0, 0, 0;
     --mio-text: 255, 255, 255;
     --mio-primary: 100, 209, 226;
     --mio-primary50: 63, 194, 214;
-    --hope-colors-info9: rgba(var(--mio-primary), 1);
-    --hope-colors-info4: rgba(var(--mio-primary), 0.4);
-    --hope-colors-info5: rgba(var(--mio-primary50), 0.4);
-    --hope-colors-info11: rgba(var(--mio-primary50), 1);
+    --hope-colors-info9: rgba(var(--mio-primary-js, --mio-primary), 1);
+    --hope-colors-info4: rgba(var(--mio-primary-js, --mio-primary), 0.4);
+    --hope-colors-info5: rgba(var(--mio-primary50-js, --mio-primary50), 0.4);
+    --hope-colors-info11: rgba(var(--mio-primary50-js, --mio-primary50), 1);
   }
 }
 
@@ -63,32 +63,32 @@ div#root div.hope-c-PJLV-iiLzBwx-css {
 
 /**头部*/
 div#root div.hope-c-PJLV-iiLzBwx-css header {
-  background-color: rgba(var(--mio-main), 0.3);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.3);
 }
 
 /**内容区*/
 
 /**侧边栏*/
 div.hope-c-PJLV-ibpTetR-css > div:first-child {
-  background-color: rgba(var(--mio-main), 0.3);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.3);
 }
 
 div.hope-c-PJLV-ibpTetR-css > div:first-child div.hope-c-PJLV-ibBheSN-css {
-  color: var(--mio-main);
+  color: var(--mio-main-js, --mio-main);
 }
 
 /**tag a*/
 div.hope-c-PJLV-ibpTetR-css > div:first-child a.hope-c-PJLV-ikmVjeJ-css {
-  color: rgba(var(--mio-primary));
-  background-color: rgba(var(--mio-primary), 0.2);
+  color: rgba(var(--mio-primary-js, --mio-primary));
+  background-color: rgba(var(--mio-primary-js, --mio-primary), 0.2);
 }
 /**暗色模式*/
 div.hope-c-PJLV-ibpTetR-css > div:first-child .hope-c-PJLV-ijrehjy-css {
-  background: rgba(var(--mio-main), 0.3);
+  background: rgba(var(--mio-main-js, --mio-main), 0.3);
 }
 /**亮色模式*/
 div.hope-c-PJLV-ibpTetR-css > div:first-child .hope-c-PJLV-ikaEncD-css {
-  background: rgba(var(--mio-primary), 0.3);
+  background: rgba(var(--mio-primary-js, --mio-primary), 0.3);
 }
 
 /**主内容区*/
@@ -100,7 +100,7 @@ div.hope-c-PJLV-ibpTetR-css
   div.hope-c-PJLV-ijycFhp-css
   div.hope-c-PJLV-iiVJRSE-css {
   transition: all 0.2s ease-in-out;
-  background: rgba(var(--mio-main), 0.3);
+  background: rgba(var(--mio-main-js, --mio-main), 0.3);
 }
 
 div.hope-c-PJLV-ibpTetR-css
@@ -109,24 +109,24 @@ div.hope-c-PJLV-ibpTetR-css
 div.hope-c-PJLV-ibpTetR-css
   div.hope-c-PJLV-ijycFhp-css
   div.hope-c-PJLV-iiVJRSE-css:hover {
-  border-color: rgba(var(--mio-primary), 0.7);
+  border-color: rgba(var(--mio-primary-js, --mio-primary), 0.7);
 }
 
 /**字段*/
 .hope-c-kvTTWD-hYRNAb-variant-filled {
-  background-color: rgba(var(--mio-main), 0.2);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.2);
 }
 
 .hope-c-kvTTWD-hYRNAb-variant-filled:hover,
 .hope-c-kvTTWD-hYRNAb-variant-filled:focus {
-  background-color: rgba(var(--mio-main), 0.7);
-  border-color: rgba(var(--mio-primary), 0.5);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.7);
+  border-color: rgba(var(--mio-primary-js, --mio-primary), 0.5);
 }
 
 /**开关*/
 .hope-c-mHASU-byiOue-variant-filled {
-  color: rgb(var(--mio-primary), 0.5);
-  background-color: rgba(var(--mio-main), 0.2);
+  color: rgb(var(--mio-primary-js, --mio-primary), 0.5);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.2);
 }
 
 .hope-c-mHASU-byiOue-variant-filled[data-checked] {
@@ -134,8 +134,8 @@ div.hope-c-PJLV-ibpTetR-css
 }
 
 .hope-c-mHASU-byiOue-variant-filled[data-focus] {
-  box-shadow: 0 0 0 3px var(--mio-primary);
-  border-color: var(--mio-primary);
+  box-shadow: 0 0 0 3px var(--mio-primary-js, --mio-primary);
+  border-color: var(--mio-primary-js, --mio-primary);
 }
 
 /**头部*/
@@ -153,7 +153,7 @@ div#root div.header .header-right > button {
 }
 
 div#root div.header svg {
-  color: rgba(var(--mio-primary));
+  color: rgba(var(--mio-primary-js, --mio-primary));
 }
 
 /**内容部分*/
@@ -169,7 +169,7 @@ div#root div.body nav.nav::after {
 
 /*列表部分*/
 div#root div.body div.obj-box {
-  background-color: rgba(var(--mio-main), 0.3);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.3);
   min-height: 300px;
   max-height: calc(100vh - 180px);
   overflow-y: auto;
@@ -196,32 +196,32 @@ div#root div.body div.obj-box::-webkit-scrollbar-track {
 }
 
 div#root div.body div.obj-box::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(var(--mio-primary), 0.4);
+  background-color: rgba(var(--mio-primary-js, --mio-primary), 0.4);
 }
 
 div#root div.body div.obj-box span.hope-c-iojPKw svg {
-  color: rgba(var(--mio-main), 1);
+  color: rgba(var(--mio-main-js, --mio-main), 1);
 }
 
 /*底部MD*/
 div#root div.body div.hope-c-PJLV-ikSuVsl-css,
 div#root div.body .hope-c-PJLV-iiuDLME-css {
-  background-color: rgba(var(--mio-main), 0.3);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.3);
   backdrop-filter: blur(5px);
 }
 
 /**MD*/
 .markdown-body > ul > li::marker {
-  color: rgba(var(--mio-primary), 1);
+  color: rgba(var(--mio-primary-js, --mio-primary), 1);
 }
 
 /**侧边栏*/
 div#root div.body div.hope-c-PJLV-ieGWMbI-css {
-  background-color: rgba(var(--mio-main), 0.3);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.3);
 }
 
 div#root div.body div.hope-c-PJLV-ieGWMbI-css p.hope-c-PJLV-iZZmce-css {
-  background-color: rgba(var(--mio-primary), 0.7);
+  background-color: rgba(var(--mio-primary-js, --mio-primary), 0.7);
 }
 
 div#root div.body div.hope-c-PJLV-ieGWMbI-css p.hope-c-PJLV-igSqJIB-css {
@@ -231,7 +231,7 @@ div#root div.body div.hope-c-PJLV-ieGWMbI-css p.hope-c-PJLV-igSqJIB-css {
 }
 
 div#root div.body svg {
-  color: rgba(var(--mio-primary));
+  color: rgba(var(--mio-primary-js, --mio-primary));
 }
 
 /**底部*/
@@ -246,44 +246,44 @@ div.center-toolbar {
 }
 
 div.left-toolbar-box div.left-toolbar {
-  background-color: rgba(var(--mio-main), 0.8);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.8);
 }
 
 div.left-toolbar-box div.left-toolbar svg.hope-icon,
 div.left-toolbar-box svg.hope-icon {
-  color: rgba(var(--mio-primary));
+  color: rgba(var(--mio-primary-js, --mio-primary));
 }
 
 div.left-toolbar-box div.left-toolbar svg.hope-icon:hover,
 div.left-toolbar-box svg.hope-icon:hover {
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(var(--mio-primary));
+  background-color: rgba(var(--mio-primary-js, --mio-primary));
 }
 
 /**返回顶部*/
 div.hope-c-PJLV-ihMpUpe-css {
-  background-color: rgba(var(--mio-primary)) !important;
+  background-color: rgba(var(--mio-primary-js, --mio-primary)) !important;
 }
 
 /**tooltip提示*/
 div.hope-tooltip {
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(var(--mio-primary), 1);
+  background-color: rgba(var(--mio-primary-js, --mio-primary), 1);
 }
 
 /**加载图标*/
 div.hope-spinner {
-  color: rgba(var(--mio-primary));
+  color: rgba(var(--mio-primary-js, --mio-primary));
 }
 
 /**menu下拉区域*/
 div.hope-menu__content {
-  background-color: rgba(var(--mio-main), 0.3);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.3);
 }
 
 /**select下拉区域*/
 div.hope-c-XJURY {
-  background: rgba(var(--mio-main), 0.8);
+  background: rgba(var(--mio-main-js, --mio-main), 0.8);
 }
 
 /**登录页*/
@@ -299,7 +299,7 @@ div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-ihWgyFw-css {
 /**登录框*/
 div.hope-c-PJLV-ibcBsNO-css div.hope-c-PJLV-iubUra-css,
 div.hope-c-PJLV-ibcBsNO-css .hope-c-PJLV-ifjOQLV-css {
-  background-color: rgba(var(--mio-main), 0.5);
+  background-color: rgba(var(--mio-main-js, --mio-main), 0.5);
   backdrop-filter: blur(5px);
 }
 
