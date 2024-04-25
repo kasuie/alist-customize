@@ -2,15 +2,15 @@
  * @Author: kasuie
  * @Date: 2023-05-08 22:52:57
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 22:45:45
+ * @LastEditTime: 2024-04-25 22:47:24
  * @Description:
 -->
 
 # alist-customize
 
-alist(v3) 样式上的一些调整美化，都是一些主观调整的调整，如恰巧你也喜欢那便是极好的了~
+alist 样式上的一些调整美化，都是一些主观调整的调整，如恰巧你也喜欢那便是极好的了~
 
-alist(v3) Some style adjustments and beautifications, all subjective adjustments. If by chance you also like them, that would be great~
+alist Some style adjustments and beautifications, all subjective adjustments. If by chance you also like them, that would be great~
 
 ## 使用
 
