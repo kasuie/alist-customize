@@ -10,7 +10,7 @@
 
 alist 样式上的一些调整美化，都是一些主观调整的调整，如恰巧你也喜欢那便是极好的了~
 
-alist Some style adjustments and beautifications, all subjective adjustments. If by chance you also like them, that would be great~
+alist some style adjustments and beautifications, all subjective adjustments. If by chance you also like them, that would be great~
 
 ## 使用
 
