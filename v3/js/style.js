@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 20:51:59
+ * @LastEditTime: 2024-04-25 20:59:33
  * @Description:
  */
 let footer = false;
@@ -43,6 +43,7 @@ const onPatchStyle = (style) => {
 };
 
 const setCssVariable = (variable, value) => {
+  console.log(variable, value);
   document.documentElement.style.setProperty(variable, value);
 };
 
@@ -101,32 +102,41 @@ const init = () => {
     }, 300);
   }
 
-  const backTopDom = document.querySelector(".hope-c-PJLV-ihMpUpe-css");
-  if (backTopDom) {
-    let primary = window.getComputedStyle(backTopDom).backgroundColor;
-    primary = primary?.includes("rgb")
-      ? primary.replace("rgb(").replace(")")
-      : null;
-    if (primary) {
-      const rgb = primary.split(",");
-      const vars = ["--mio-primary", "--mio-primary50"];
-      vars.map((v) => {
-        if (v == "--mio-primary") {
-          setCssVariable(`${v}-js`, primary);
-        } else if (v == "--mio-primary50") {
-          let primary50 = "";
-          rgb.forEach((vv, index) => {
-            if (index) {
-              primary50 = `${primary50}, ${+vv - 10}`;
-            } else {
-              primary50 = `${+vv - 40}`;
-            }
-          });
-          setCssVariable(`${v}-js`, primary50);
-        }
-      });
+  const setVar = (backTopDom) => {
+    if (backTopDom) {
+      let primary = window.getComputedStyle(backTopDom).backgroundColor;
+      primary = primary?.includes("rgb")
+        ? primary.replace("rgb(").replace(")")
+        : null;
+      if (primary) {
+        const rgb = primary.split(",");
+        const vars = ["--mio-primary", "--mio-primary50"];
+        vars.map((v) => {
+          if (v == "--mio-primary") {
+            setCssVariable(`${v}-js`, primary);
+          } else if (v == "--mio-primary50") {
+            let primary50 = "";
+            rgb.forEach((vv, index) => {
+              if (index) {
+                primary50 = `${primary50}, ${+vv - 10}`;
+              } else {
+                primary50 = `${+vv - 40}`;
+              }
+            });
+            setCssVariable(`${v}-js`, primary50);
+          }
+        });
+      }
     }
-  }
+  };
+
+  let flag = 0;
+  const interval1 = setInterval(() => {
+    const backTopDom = document.querySelector(".hope-c-PJLV-ihMpUpe-css");
+    backTopDom && setVar(backTopDom);
+    if (backTopDom || flag > 10) clearInterval(interval1);
+    ++flag;
+  }, 300);
 
   // const navHome = document.querySelector(".hope-c-PJLV-ibMsOCJ-css");
   // if (navHome) {
