@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 20:59:33
+ * @LastEditTime: 2024-04-25 21:01:06
  * @Description:
  */
 let footer = false;
@@ -106,7 +106,7 @@ const init = () => {
     if (backTopDom) {
       let primary = window.getComputedStyle(backTopDom).backgroundColor;
       primary = primary?.includes("rgb")
-        ? primary.replace("rgb(").replace(")")
+        ? primary.replace("rgb(", "").replace(")", "")
         : null;
       if (primary) {
         const rgb = primary.split(",");
