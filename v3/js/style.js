@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 17:44:00
+ * @LastEditTime: 2024-04-25 17:52:50
  * @Description:
  */
 let footer = false;
@@ -96,10 +96,10 @@ const init = () => {
       renderFooter(footerData);
     }, 300);
   }
-  const navHome = document.querySelector(".hope-c-PJLV-ibMsOCJ-css");
-  if (navHome) {
-    navHome.innerHTML = "✨";
-  }
+  // const navHome = document.querySelector(".hope-c-PJLV-ibMsOCJ-css");
+  // if (navHome) {
+  //   navHome.innerHTML = "✨";
+  // }
 };
 
 init();
