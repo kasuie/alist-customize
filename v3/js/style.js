@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 20:15:51
+ * @LastEditTime: 2024-04-25 20:51:59
  * @Description:
  */
 let footer = false;
@@ -44,14 +44,6 @@ const onPatchStyle = (style) => {
 
 const setCssVariable = (variable, value) => {
   document.documentElement.style.setProperty(variable, value);
-};
-
-const hexToRgb = (hex) => {
-  hex = hex.replace(/^#/, "");
-  let r = parseInt(hex.substring(0, 2), 16);
-  let g = parseInt(hex.substring(2, 4), 16);
-  let b = parseInt(hex.substring(4, 6), 16);
-  return r + ", " + g + ", " + b;
 };
 
 const onCreateElement = (tag, attrs) => {
@@ -108,6 +100,34 @@ const init = () => {
       renderFooter(footerData);
     }, 300);
   }
+
+  const backTopDom = document.querySelector(".hope-c-PJLV-ihMpUpe-css");
+  if (backTopDom) {
+    let primary = window.getComputedStyle(backTopDom).backgroundColor;
+    primary = primary?.includes("rgb")
+      ? primary.replace("rgb(").replace(")")
+      : null;
+    if (primary) {
+      const rgb = primary.split(",");
+      const vars = ["--mio-primary", "--mio-primary50"];
+      vars.map((v) => {
+        if (v == "--mio-primary") {
+          setCssVariable(`${v}-js`, primary);
+        } else if (v == "--mio-primary50") {
+          let primary50 = "";
+          rgb.forEach((vv, index) => {
+            if (index) {
+              primary50 = `${primary50}, ${+vv - 10}`;
+            } else {
+              primary50 = `${+vv - 40}`;
+            }
+          });
+          setCssVariable(`${v}-js`, primary50);
+        }
+      });
+    }
+  }
+
   // const navHome = document.querySelector(".hope-c-PJLV-ibMsOCJ-css");
   // if (navHome) {
   //   navHome.innerHTML = "✨";

@@ -266,10 +266,10 @@ div.left-toolbar-box svg.hope-icon:hover {
   background-color: rgba(var(--mio-primary-js, var(--mio-primary)));
 }
 
-/**返回顶部*/
-div.hope-c-PJLV-ihMpUpe-css {
+/**返回顶部: 为js获取后台设置的主题色，注释掉*/
+/* div.hope-c-PJLV-ihMpUpe-css {
   background-color: rgba(var(--mio-primary-js, var(--mio-primary))) !important;
-}
+} */
 
 /**tooltip提示*/
 div.hope-tooltip {
