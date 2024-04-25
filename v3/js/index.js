@@ -2,15 +2,13 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 21:26:14
+ * @LastEditTime: 2024-04-25 21:40:09
  * @Description:
  */
 let footer = false;
 
 const footerStyle = `
   .footer {
-    position: fixed;
-    bottom: 0;
     padding-bottom: 10px;
     padding-top: 10px;
     display: flex !important;
