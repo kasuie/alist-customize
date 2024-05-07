@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2023-05-08 22:52:57
  * @LastEditors: kasuie
- * @LastEditTime: 2024-05-07 10:53:37
+ * @LastEditTime: 2024-05-07 11:03:47
  * @Description:
 -->
 
@@ -10,7 +10,11 @@
 
 alist 样式上的一些调整美化，都是一些主观调整的调整，如恰巧你也喜欢那便是极好的了~
 
-alist some style adjustments and beautifications, all subjective adjustments. If by chance you also like them, that would be great~
+alist style adjustments and beautifications, all subjective adjustments. If by chance you also like them, that would be great~
+
+- 主题扩展轻松自定义
+- 主观上的一些美化，包含整体半透明，随机背景图片
+- 自定义footer
 
 ## 使用
 
