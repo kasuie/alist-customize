@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2023-05-08 22:52:57
  * @LastEditors: kasuie
- * @LastEditTime: 2024-04-25 22:47:24
+ * @LastEditTime: 2024-05-07 10:53:37
  * @Description:
 -->
 
@@ -18,24 +18,30 @@ alist some style adjustments and beautifications, all subjective adjustments. If
 
 单独使用`css`效果：
 
-![alt text](v3/preview/prev-css.png)
+![alt text](preview/prev-css.png)
 
 加上`js`效果：
 
-![alt text](v3/preview/prev-js.png)
+![alt text](preview/prev-js.png)
 
-加上`js`亮色主题效果：
+亮色主题效果：
 
-![alt text](v3/preview/prev-js-light.png)
+![alt text](preview/prev-js-light.png)
 
-- `index.css`: 样式的一些调整，内置主题色为`rgb(100, 209, 226)`, 如需要修改其他颜色，修改文件内的变量即可：
+登录页：
 
-> 修改 `--mio-primary`, `--mio-primary50` 这个两个变量一般就能满足情况，使用 rgb 通道值
+![alt text](preview/prev-login.png)
+
+- `index.css`: 样式的一些调整，内置主题色为`rgb(100, 209, 226)` #64d1e2 偏蓝, 如需要修改其他颜色，修改文件内的变量即可。修改 `--mio-primary`, `--mio-primary50` 这个两个变量一般就能满足情况，注意请使用 rgb 通道值，例如你想改成一个偏粉的主题，修改如下就好了：
+```css
+    --mio-primary: 237, 105, 176;
+    --mio-primary50: 190, 100, 166;
+```
 
 `alist`管理后台自定义头部引入：
 
 ```js
-<link href="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@v1.0.1/v3/css/index.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@main/v3/css/index.min.css" rel="stylesheet" type="text/css" />
 ```
 
 - `index.js`： 主要是一些对页面 Dom 元素的操作和样式调整，目前支持自定义页面下方的`footer`，需要在`alist`后台管理自定义内容中添加一段描述 footer 的文本，`js`自动加载渲染到页面，例如：
@@ -49,10 +55,10 @@ alist some style adjustments and beautifications, all subjective adjustments. If
     ]
 <div>
 
-<script src="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@v1.0.1/v3/js/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@main/v3/js/index.min.js"></script>
 ```
 
-以上就会生成三个 a 标签放置在底部：![alt text](v3/preview/image.png)
+以上就会生成三个 a 标签放置在底部：![alt text](preview/image.png)
 
 其中数组对象参数:
 
@@ -61,14 +67,21 @@ alist some style adjustments and beautifications, all subjective adjustments. If
 - `icon`: 数字，非必填，是否展示链接的 icon
 - `target`: 字符串，非必填，a 标签的 target 属性
 
-根据自己需要调整数组里的对象，其他地方保持不变即可，当然你不需要自定义，也可以仅仅引入 css 文件就好。
+根据自己需要调整数组里的对象，其他地方保持不变即可，当然你不需要自定义这部分，也可以仅仅引入 css 文件就好。
+
+如果你的站点加载`cdn.jsdelivr.net`速度不理想，可以考虑使用其他cdn替代，例如：
+
+```javascript
+<link href="https://jsd.cdn.zzko.cn/gh/kasuie/alist-customize@main/v3/css/index.min.css" rel="stylesheet" type="text/css" />
+<script src="https://jsd.cdn.zzko.cn/gh/kasuie/alist-customize@main/v3/js/index.min.js"></script>
+```
 
 ## ~省流~
 
 `css` 自定义头部处引入：
 
 ```js
-<link href="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@version/v3/css/index.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@main/v3/css/index.min.css" rel="stylesheet" type="text/css" />
 ```
 
 `js` 自定义内容处引入：
@@ -80,7 +93,5 @@ alist some style adjustments and beautifications, all subjective adjustments. If
     ]
 <div>
 
-<script src="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@version/v3/js/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kasuie/alist-customize@main/v3/js/index.min.js"></script>
 ```
-
-请注意替换`version`为右侧栏`releases`处的版本号~

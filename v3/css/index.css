@@ -1,7 +1,7 @@
 :root {
   --mio-main: 255, 255, 255;
   --mio-text: 0, 0, 0;
-  --mio-primary: 100, 209, 226;
+  --mio-primary: 100, 209, 226; /* 主题色 #64d1e2 偏蓝 */
   --mio-primary50: 63, 194, 214;
   --mio-main-opacity: 0.3;
   --hope-colors-info9: rgba(var(--mio-primary), 1);
@@ -12,8 +12,6 @@
   .hope-ui-dark {
     --mio-main: 0, 0, 0;
     --mio-text: 255, 255, 255;
-    --mio-primary: 100, 209, 226;
-    --mio-primary50: 63, 194, 214;
     --mio-main-opacity: 0.3;
     --hope-colors-info9: rgba(var(--mio-primary), 1);
     --hope-colors-info4: rgba(var(--mio-primary), 0.4);
@@ -34,8 +32,14 @@ body::before {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(https://kasuie.cc/api/img/bg?size=regular);
+  background-image: url(https://kasuie.cc/api/img/bg?size=regular); /* 背景图片，可自行替换 */
   z-index: 0;
+}
+
+@media screen and (max-width: 960px) {
+  body::before {
+    background-image: url(https://kasuie.cc/api/img/bg?type=mobile&size=regular); /* 竖屏背景图片，可自行替换 */
+  }
 }
 
 /**白天背景稍亮*/
@@ -45,12 +49,6 @@ body.hope-ui-light::before {
 /**夜间背景稍暗*/
 body.hope-ui-dark::before {
   filter: blur(3px) brightness(0.3);
-}
-
-@media screen and (max-width: 960px) {
-  body::before {
-    background-image: url(https://kasuie.cc/api/img/bg?type=mobile&size=regular);
-  }
 }
 
 div#root {
