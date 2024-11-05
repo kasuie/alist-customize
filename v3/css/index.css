@@ -21,10 +21,8 @@
 }
 
 @font-face {
-  font-family: LXGWWenKai-Regular;
-  src: url("../font/LXGWWenKai-Regular.ttf") format("ttf");
-  font-style: normal;
-  font-weight: normal;
+  font-family: "LXGWWenKai-Regular";
+  src: url("../font/LXGWWenKai-Regular.ttf") format("truetype");
 }
 
 /** 背景 */
