@@ -61,7 +61,7 @@ body.hope-ui-dark::before {
 div#root {
   position: relative;
   z-index: 1;
-  font-family: LXGWWenKai-Regular;
+  font-family: "LXGWWenKai-Regular";
 }
 
 /**管理后台*/

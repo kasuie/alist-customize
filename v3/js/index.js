@@ -2,7 +2,7 @@
  * @Author: kasuie
  * @Date: 2024-04-24 15:35:59
  * @LastEditors: kasuie
- * @LastEditTime: 2024-11-05 09:25:03
+ * @LastEditTime: 2024-11-05 09:38:54
  * @Description:
  */
 let footer = false;
@@ -64,7 +64,7 @@ const renderFooter = (data) => {
         const aDom = onCreateElement("a", { target: aTarget || null, href });
         const ImgDom = icon
           ? onCreateElement("img", {
-              src: `https://api.remio.cc/icon/${new URL(href).host}.icon`,
+              src: `https://api.remio.cc/icon/${new URL(href).host}.ico`,
             })
           : null;
         aDom && (aDom.innerText = text);
