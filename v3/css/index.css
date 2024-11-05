@@ -20,6 +20,13 @@
   }
 }
 
+@font-face {
+  font-family: LXGWWenKai-Regular;
+  src: url("../font/LXGWWenKai-Regular.ttf") format("ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
 /** 背景 */
 body::before {
   content: "";
@@ -54,6 +61,7 @@ body.hope-ui-dark::before {
 div#root {
   position: relative;
   z-index: 1;
+  font-family: LXGWWenKai-Regular;
 }
 
 /**管理后台*/
