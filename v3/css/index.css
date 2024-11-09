@@ -30,18 +30,14 @@
   src: url("https://npm.elemecdn.com/fontcdn-ariasaka@1.0.0/HYTangMeiRen55W.woff2") format("woff2");
 }
 
-body {
-  height: auto;
-}
-
 /** 背景 */
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -230,7 +226,7 @@ div#root div.body .hope-c-PJLV-iiuDLME-css {
 
 /**MD*/
 .markdown-body {
-  font-family: inherit;
+  font-family: inherit !important;
 }
 
 .markdown-body > ul > li::marker {
