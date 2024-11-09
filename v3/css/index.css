@@ -64,6 +64,7 @@ body.hope-ui-dark::before {
 div#root {
   position: relative;
   z-index: 1;
+  height: 100vh;
 }
 
 /**管理后台*/
