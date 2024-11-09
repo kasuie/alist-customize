@@ -30,14 +30,18 @@
   src: url("https://npm.elemecdn.com/fontcdn-ariasaka@1.0.0/HYTangMeiRen55W.woff2") format("woff2");
 }
 
+body {
+  height: auto;
+}
+
 /** 背景 */
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -64,7 +68,6 @@ body.hope-ui-dark::before {
 div#root {
   position: relative;
   z-index: 1;
-  height: 100vh;
 }
 
 /**管理后台*/
@@ -226,6 +229,10 @@ div#root div.body .hope-c-PJLV-iiuDLME-css {
 }
 
 /**MD*/
+.markdown-body {
+  font-family: inherit;
+}
+
 .markdown-body > ul > li::marker {
   color: rgba(var(--mio-primary), 1);
 }
